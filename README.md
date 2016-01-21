@@ -20,7 +20,6 @@ psirt.login({
 }).then(function(token) {
   // Use Token in Authorization Header to get Security Advisory Records
   return psirt.advisoryCall({
-    url: 'https://api.cisco.com/security',
     token: token,
     path: '/advisories/cvrf/all',
     method: 'GET'
@@ -29,3 +28,5 @@ psirt.login({
   console.log(advisories);
 })
 ```
+
+** __SECURITY TOKENS__ are rendered useless after __60 MINUTES__
