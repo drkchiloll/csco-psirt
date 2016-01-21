@@ -2,7 +2,7 @@ var Promise = require('bluebird'),
     request = require('request');
 
 // Constants
-const PSIRT_URI = 'https://api.cisco.com/security';
+const PSIRT_URI = 'https://api.cisco.com/security/advisories';
 
 var _options = (opts) => {
   var options = {
