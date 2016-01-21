@@ -17,14 +17,14 @@ var psirt = require('csco-psirt');
 psirt.login({
   clientId: 'id',
   clientSecret: 'secret'
-}).then(function(token) {
+}).then((token) => {
   // Use Token in Authorization Header to get Security Advisory Records
   return psirt.advisoryCall({
     token: token,
     path: '/advisories/cvrf/all',
     method: 'GET'
   });
-}).then(function(advisories) {
+}).then((advisories) => {
   console.log(advisories);
 })
 ```
