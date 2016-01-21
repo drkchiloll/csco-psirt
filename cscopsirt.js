@@ -32,7 +32,8 @@ var _req = (args) => {
   });
   return new Promise((resolve, reject) => {
     request(options, (err, res, body) => {
-      if(err) resolve(err);
+      if(err) return reject(err);
+      if((''+res.statusCode).startsWith('4')) return reject(res.statusCode);
       resolve(body);
     });
   });
