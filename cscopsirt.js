@@ -27,15 +27,15 @@ var _req = (args) => {
     form: args.form || '',
     method: args.method
   });
-  return new Promise(function(resolve, reject) {
-    request(options, function(err, res, body) {
+  return new Promise((resolve, reject) => {
+    request(options, (err, res, body) => {
       if(err) resolve(err);
       resolve(body);
     });
   });
 };
 
-module.exports = (function() {
+module.exports = (() => {
   var psirt = {};
 
   psirt.login = (params) => {
@@ -50,7 +50,7 @@ module.exports = (function() {
       form: formData,
       header: {'content-type': 'application/x-www-form-urlencoded'},
       method: 'POST'
-    }).then(function(res) {
+    }).then((res) => {
       try {
         return JSON.parse(res)['access_token'];
       } catch(e) {
@@ -64,7 +64,7 @@ module.exports = (function() {
       uri: params.url + params.path,
       auth: params.token,
       method: params.method
-    }).then(function(res) {
+    }).then((res) => {
       return res;
     })
   };
