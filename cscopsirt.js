@@ -1,6 +1,9 @@
 var Promise = require('bluebird'),
     request = require('request');
 
+// Constants
+const PSIRT_URI = 'https://api.cisco.com/security';
+
 var _options = (opts) => {
   var options = {
     url: opts.uri,
@@ -61,7 +64,7 @@ module.exports = (() => {
 
   psirt.advisoryCall = (params) => {
     return _req({
-      uri: params.url + params.path,
+      uri: PSIRT_URI + params.path,
       auth: params.token,
       method: params.method
     }).then((res) => {
