@@ -67,7 +67,7 @@ module.exports = (() => {
     return _req({
       uri: PSIRT_URI + params.path,
       auth: params.token,
-      method: params.method
+      method: 'GET'
     }).then((res) => {
       return res;
     })
