@@ -1,6 +1,6 @@
 {
   "name": "csco-psirt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cisco PSIRT OpenVulnerability API",
   "main": "cscopsirt.js",
   "scripts": {
